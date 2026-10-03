@@ -1,11 +1,49 @@
-- Existen dos modalidades distintas de comunicación de datos digitales: En paralelo y en serie. La primera, que permite un flujo de bits garantizado por varios canales, es típica del sistema de conducciones internas del ordenador y asegura una mayor velocidad. La segunda (que incluye el estándar USB), es la más extendida para comunicaciones entre dispositivos y periféricos. Aprovecha el envió secuencial de bits que, al ser más lento, precisa menos ficheros (menor coste), y está menos sometido a interferencias y errores de transmición.
+### 1. Transmision de datos: Cómo viaja la información.
+
+La información digital puede enviarse mediante dos modalidades principales: **transmisión en paralelo** o **transmisión en serie**.
+* **Transmisión en paralelo:** Permite un flujo de bits garantizado por varios canales. Es típica del sistema de conducciones internas del ordenador y asegura una mayor velocidad.
+* **Transmisión en serie:** Es la más extendida para comunicaciones entre dispositivos y periféricos. Aprovecha el envío secuencial de bits que, al ser más lento, precisa menos **ficheros** (menor coste), y está menos sometido a interferencias y errores de transmisión. 
+
+![Transmisión paralelo y serie](/imgs/imgTransmision.jpg)
+
+### 2. Compresión de datos y eficiencia: Cómo optimizar el espacio.
+
+Para enviar o almacenar datos de forma eficiente se utiliza la **codificación de Huffman**, el algoritmo desarrollado en 1952 por David A. Huffman, que es un algoritmo de compresión sin pérdida (*lossless*) que organiza los símbolos en un árbol binario según su freciencia de aparición. Esto da lugar a diferentes ficheros, que presentamos en la siguiente tabla:
+
+|Tipo|Ejemplos|
+|---|---|
+|**Sin pérdida** (lossless)|`ZIP`, `RAR`, `7z`, `PNG`, `GIF`, `TIFF`, `FLAC`|
+|**Con pérdida** (lossy)|`JPEG`, `MP3`, `MPEG`|
+|**Sin compresión**|`TXT`, `PDF`|
 
 ![Arbol binario](/imgs/imgArbol.jpg)
 
-- Aquí tenemos un típico árbol binario que muestra una "codificación de Huffman", el algoritmo desarrollado en 1952 por David A. Huffman, el más eficiente de los sistemas de asignación de símbolos en cadenas binarias. En el ejemplo, la frase "*this is an example of a human tree*" está ordenado en base al número de veces que aparece cada caracter, poniendo en parejas de hijos las de menor frecuencia cuyo progenitor esté ordenado como suma de sus hijos. SDe podrá descodificar asignando a cada nodo un bit y a las letras valores iguales a 1, 2, 3, 4 o 5 bits según el orden.
+Aquí tenemos un típico árbol binario que muestra una "codificación de Huffman". En el ejemplo, la frase "*this is an example of a human tree*" está ordenada en base al número de veces que aparece cada caracter, poniendo en parejas de hijos las de menor frecuencia cuyo progenitor esté ordenado como suma de sus hijos. Se podrá decodificar asignando a cada nodo un bit y a las letras valores iguales a 1, 2, 3, 4 o 5 bits según el orden.
 
-- El principal método de control de transmisión y memorización de datos es el uso del llamado «bit de paridad», que detecta errores debidos a interferencias de diverso tipo. Se trata de un bit extra añadido al conjunto de bits que se quiere enviar, y que indica si el número de bits con valor de 1 es par o impar. Contando el número de «unos>> hallamos el «bit de paridad par», que será 1 si tiene un total impar o 0 si el total de «unos>> es par; en el caso de la «paridad impar>> sería al contrario: si la suma total de «unos>> es par, tendríamos un bit de paridad 1, y si impar, 0. El bit de paridad detecta solo errores impares, y no puede corregirlos. El «código de Hamming», inventado en 1950 por Richard Hamming (1915-1998), utiliza un «código de paridad>> distribuido en bits colocados en el orden de las potencias de 2 que, a diferencia del bit de paridad, no solo revela la presencia de un error, sino que localiza el bit equivocado en un determinado conjunto y lo puede corregir con ayuda de otros bits.
+### 3. Detección y Corrección de Errores: Cómo garantizar la integridad.
 
-> ### Ficheros comprimidos
-> Los ficheros comprimidos son de distinta naturaleza según las funciones: aparte de los destinados a archivación (ficheros que contienen otros de diferente estructura a su vez comprimidos) como los `ZIP`, `RAR` y `7z (7-Zip)`, que son *lossless* típicos, están los de codificación de imagen, cuyas versiones `PNG`, `GIF` y `TIFF` exigen más memoria pero no suponen pérdida de calidad como los `JPEG` y `GIF` con más de 256 colores; están, además, los de codificación de audio, como los famosos `MP3` (aún usados, pero anticuados y poco eficientes en muchos aspectos) y `FLAC` (*lossless*), o los de compresión de vídeo, como `MPEG` (*lossy*). Obviamente, existen muchos tipos no comprimidos, como el clásico `TXT`, el más simple de texto, o el `PDF`, el formato universal de descripción de página que puede ver regulada la propia resolución.
+Durante la transmisión pueden ocurrir interferencias. Por ello, para evitar la corrupción de datos se utilizan mecanismos de control:
+* **Bits de paridad:** Un bit adicional que indica si el número de '1's es par o impar; permite detectar errores impares, pero no corregirlos.
+    > **Inconveniente**:
+    > El bit de paridad solo detecta un número **impar** de errores. Si las interferencias invierten dos bits simultáneamente, el error pasa desapercibido y el sistema no puede corregirlo
+
+    En el siguiente archivo se muestra un ejemplo sencillo en Python que ilustra la idea de verificación de paridad par en una cadena de bits:
+
+    [Ejemplo verificación de paridad par en Python](paridad.md)
+
+* **Código de Hamming:** Desarrollado en 1950 por Richard Hamming, distribuye bits de paridad en posiciones correspondientes a potencias de 2, lo que permite no solo detectar el error, sino localizar la posición exacta del bit equivocado y corregirlo.
+
+    #### Como detecta y corrige un bit alterado:
+    1. Calcula los bits de paridad en el extremo emisor y los distribuye en posiciones de potencias de 2. 
+    2. Se recibe la secuencia en el extremo receptor tras su paso por el canal. 
+    3. Recalcula las comprobaciones de paridad e identifica el síndrome de error. 
+    4. Localiza la posición exacta del bit erróneo e invierte su valor binario.
+
+    #### Ejemplo detección y corrección de errores:
+    * Secuencia enviada: 
+    > 1 0 1 0 1 1 1 
+    * Secuencia recibida con ruido: 
+    > 1 0 1 0 ~~-0-~~ 1 1 (error detectado en la posición 5). 
+    * Secuencia corregida por Hamming: 
+    > 1 0 1 0 **1** 1 1.
 
