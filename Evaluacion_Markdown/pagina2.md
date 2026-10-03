@@ -1,4 +1,4 @@
-### 1. Transmision de datos: Cómo viaja la información.
+## 1. Transmision de datos: Cómo viaja la información.
 
 La información digital puede enviarse mediante dos modalidades principales: **transmisión en paralelo** o **transmisión en serie**.
 * **Transmisión en paralelo:** Permite un flujo de bits garantizado por varios canales. Es típica del sistema de conducciones internas del ordenador y asegura una mayor velocidad.
@@ -6,7 +6,7 @@ La información digital puede enviarse mediante dos modalidades principales: **t
 
 ![Transmisión paralelo y serie](imgs/imgTransmision.jpg)
 
-### 2. Compresión de datos y eficiencia: Cómo optimizar el espacio.
+## 2. Compresión de datos y eficiencia: Cómo optimizar el espacio.
 
 Para enviar o almacenar datos de forma eficiente se utiliza la **codificación de Huffman**, el algoritmo desarrollado en 1952 por David A. Huffman, que es un algoritmo de compresión sin pérdida (*lossless*) que organiza los símbolos en un árbol binario según su freciencia de aparición. Esto da lugar a diferentes ficheros, que presentamos en la siguiente tabla:
 
@@ -14,7 +14,7 @@ Para enviar o almacenar datos de forma eficiente se utiliza la **codificación d
 
 Aquí tenemos un típico árbol binario que muestra una "codificación de Huffman". En el ejemplo, la frase "*this is an example of a human tree*" está ordenada en base al número de veces que aparece cada caracter, poniendo en parejas de hijos las de menor frecuencia cuyo progenitor esté ordenado como suma de sus hijos. Se podrá decodificar asignando a cada nodo un bit y a las letras valores iguales a 1, 2, 3, 4 o 5 bits según el orden.
 
-### 3. Detección y Corrección de Errores: Cómo garantizar la integridad.
+## 3. Detección y Corrección de Errores: Cómo garantizar la integridad.
 
 Durante la transmisión pueden ocurrir interferencias. Por ello, para evitar la corrupción de datos se utilizan mecanismos de control:
 * **Bits de paridad:** Un bit adicional que indica si el número de '1's es par o impar; permite detectar errores impares, pero no corregirlos.
@@ -27,13 +27,13 @@ Durante la transmisión pueden ocurrir interferencias. Por ello, para evitar la 
 
 * **Código de Hamming:** Desarrollado en 1950 por Richard Hamming, distribuye bits de paridad en posiciones correspondientes a potencias de 2, lo que permite no solo detectar el error, sino localizar la posición exacta del bit equivocado y corregirlo.
 
-    #### Cómo detecta y corrige un bit alterado:
+    ### Cómo detecta y corrige un bit alterado:
     1. Calcula los bits de paridad en el extremo emisor y los distribuye en posiciones de potencias de 2. 
     2. Se recibe la secuencia en el extremo receptor tras su paso por el canal. 
     3. Recalcula las comprobaciones de paridad e identifica el síndrome de error. 
     4. Localiza la posición exacta del bit erróneo e invierte su valor binario.
 
-    #### Ejemplo detección y corrección de errores:
+    ### Ejemplo detección y corrección de errores:
     * Secuencia enviada: 
         > 1 0 1 0 1 1 1 
     * Secuencia recibida con ruido: 
