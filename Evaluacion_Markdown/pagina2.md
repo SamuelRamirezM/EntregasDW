@@ -1,6 +1,6 @@
 - Existen dos modalidades distintas de comunicación de datos digitales: En paralelo y en serie. La primera, que permite un flujo de bits garantizado por varios canales, es típica del sistema de conducciones internas del ordenador y asegura una mayor velocidad. La segunda (que incluye el estándar USB), es la más extendida para comunicaciones entre dispositivos y periféricos. Aprovecha el envió secuencial de bits que, al ser más lento, precisa menos ficheros (menor coste), y está menos sometido a interferencias y errores de transmición.
 
-![Arbol binario](/imgs/imgArbol.jpg)
+![Arbol binario](imgs\imgArbol.jpg)
 
 - Aquí tenemos un típico árbol binario que muestra una "codificación de Huffman", el algoritmo desarrollado en 1952 por David A. Huffman, el más eficiente de los sistemas de asignación de símbolos en cadenas binarias. En el ejemplo, la frase "*this is an example of a human tree*" está ordenado en base al número de veces que aparece cada caracter, poniendo en parejas de hijos las de menor frecuencia cuyo progenitor esté ordenado como suma de sus hijos. SDe podrá descodificar asignando a cada nodo un bit y a las letras valores iguales a 1, 2, 3, 4 o 5 bits según el orden.
 
