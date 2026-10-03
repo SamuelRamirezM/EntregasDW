@@ -4,7 +4,7 @@ La información digital puede enviarse mediante dos modalidades principales: **t
 * **Transmisión en paralelo:** Permite un flujo de bits garantizado por varios canales. Es típica del sistema de conducciones internas del ordenador y asegura una mayor velocidad.
 * **Transmisión en serie:** Es la más extendida para comunicaciones entre dispositivos y periféricos. Aprovecha el envío secuencial de bits que, al ser más lento, precisa menos **ficheros** (menor coste), y está menos sometido a interferencias y errores de transmisión. 
 
-![Transmisión paralelo y serie](/imgs/imgTransmision.jpg)
+![Transmisión paralelo y serie](imgs/imgTransmision.jpg)
 
 ### 2. Compresión de datos y eficiencia: Cómo optimizar el espacio.
 
