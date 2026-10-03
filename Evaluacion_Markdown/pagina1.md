@@ -87,4 +87,8 @@ Algunos conceptos fundamentales son `Lossy`, `Lossless`, `Entropía`, `Redundanc
 
 ## Más información
 
-Para ver más conceptos puedes consultar la [página 2](pagina2.md).
+Para ver más información puedes consultar el siguiente vídeo [Teoría de Shannon](https://www.youtube.com/watch?v=4ic-J79O9hg).
+
+## Para saber más 
+
+Consulte la página [Transmisión de datos](pagina2.md) para conocer cómo viaja la información, cómo optimizar el espacio y cómo garantizar la integridad de los datos.
