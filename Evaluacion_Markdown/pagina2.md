@@ -16,7 +16,7 @@ Para enviar o almacenar datos de forma eficiente se utiliza la **codificación d
 |**Con pérdida** (lossy)|`JPEG`, `MP3`, `MPEG`|
 |**Sin compresión**|`TXT`, `PDF`|
 
-![Arbol binario](/imgs/imgArbol.jpg)
+![Arbol binario](imgs\imgArbol.jpg)
 
 Aquí tenemos un típico árbol binario que muestra una "codificación de Huffman". En el ejemplo, la frase "*this is an example of a human tree*" está ordenada en base al número de veces que aparece cada caracter, poniendo en parejas de hijos las de menor frecuencia cuyo progenitor esté ordenado como suma de sus hijos. Se podrá decodificar asignando a cada nodo un bit y a las letras valores iguales a 1, 2, 3, 4 o 5 bits según el orden.
 
