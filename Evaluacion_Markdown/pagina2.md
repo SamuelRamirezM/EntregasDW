@@ -10,7 +10,7 @@ La información digital puede enviarse mediante dos modalidades principales: **t
 
 Para enviar o almacenar datos de forma eficiente se utiliza la **codificación de Huffman**, el algoritmo desarrollado en 1952 por David A. Huffman, que es un algoritmo de compresión sin pérdida (*lossless*) que organiza los símbolos en un árbol binario según su freciencia de aparición. Esto da lugar a diferentes ficheros, que presentamos en la siguiente tabla:
 
-![Arbol binario](imgs\imgArbol.jpg)
+![Arbol binario](imgs/imgArbol.jpg)
 
 Aquí tenemos un típico árbol binario que muestra una "codificación de Huffman". En el ejemplo, la frase "*this is an example of a human tree*" está ordenada en base al número de veces que aparece cada caracter, poniendo en parejas de hijos las de menor frecuencia cuyo progenitor esté ordenado como suma de sus hijos. Se podrá decodificar asignando a cada nodo un bit y a las letras valores iguales a 1, 2, 3, 4 o 5 bits según el orden.
 
@@ -35,9 +35,9 @@ Durante la transmisión pueden ocurrir interferencias. Por ello, para evitar la 
 
     #### Ejemplo detección y corrección de errores:
     * Secuencia enviada: 
-    > 1 0 1 0 1 1 1 
+        > 1 0 1 0 1 1 1 
     * Secuencia recibida con ruido: 
-    > 1 0 1 0 ~~-0-~~ 1 1 (error detectado en la posición 5). 
+        > 1 0 1 0 ~~-0-~~ 1 1 (error detectado en la posición 5). 
     * Secuencia corregida por Hamming: 
-    > 1 0 1 0 **1** 1 1.
+        > 1 0 1 0 **1** 1 1.
 
