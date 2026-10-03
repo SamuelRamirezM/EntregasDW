@@ -27,7 +27,7 @@ Durante la transmisión pueden ocurrir interferencias. Por ello, para evitar la 
 
 * **Código de Hamming:** Desarrollado en 1950 por Richard Hamming, distribuye bits de paridad en posiciones correspondientes a potencias de 2, lo que permite no solo detectar el error, sino localizar la posición exacta del bit equivocado y corregirlo.
 
-    #### Como detecta y corrige un bit alterado:
+    #### Cómo detecta y corrige un bit alterado:
     1. Calcula los bits de paridad en el extremo emisor y los distribuye en posiciones de potencias de 2. 
     2. Se recibe la secuencia en el extremo receptor tras su paso por el canal. 
     3. Recalcula las comprobaciones de paridad e identifica el síndrome de error. 
