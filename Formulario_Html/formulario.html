@@ -16,6 +16,105 @@
 
         <!-- Acá debe ir el código del formulario -->
 
+        <h1>Formulario de registro estudiantes.</h1>
+
+        <form>
+            <div>
+                <label for="nombre_completo">Nombre completo:</label>
+                <input id="nombre_completo">
+            </div>
+
+            <br>
+            
+            <div>
+                <label>Correo institucional:</label>
+                <input type="email" id="correo_institucional">
+            </div>
+
+            <br>
+            
+            <div>
+                <label>Contraseña:</label>
+                <input type="password" id="contraseña">
+            </div>
+
+            <br>
+
+            <div>
+                <label>Número de identidad:</label>
+                <input type="number" id="numero_identidad">
+            </div>
+
+            <br>
+
+            <div>
+                <label>Semestres cursados:</label>
+                <input type="number" id="semestres_cursados">
+            </div>
+
+            <br>
+
+            <div>
+                <label>Fecha de ingreso:</label>
+                <input type="date" id="fecha_ingreso">
+            </div>
+
+            <br>
+
+            <div>
+                <label for="si">Beneficiario beca</label>
+                <input type="checkbox" id="si" value="si" name="beca">
+            </div>
+
+            <br>
+
+            <div>
+                <label>Nivel de estudio:</label>
+
+                <label for="pregrado">Pregrado</label>
+                <input type="radio" id="pregrado" value="pregrado" name="nivel_estudio">
+
+                <label for="posgrado">Posgrado</label>
+                <input type="radio" id="posgrado" value="posgrado" name="nivel_estudio">
+            </div>
+
+            <br>
+
+            <div>
+                <label for="pertenencia_etnica">Pertenencia étnica:</label>
+                <input type="text" id="pertenencia_etnica" list="lista_etnias" placeholder="Otro...¿Cuál?">
+                <datalist id="lista_etnias">
+                    <option value="Indigena">Indigena</option>
+                    <option value="Afrocolombiano">Afrocolombiano</option>
+                    <option value="Rom">Rom</option>
+                    <option value="Gitano">Gitano</option>
+                    <option value="Ninguno">Ninguno</option>
+                </datalist>
+            </div>
+
+            <br>
+
+            <div>
+                <label for="actividades_extracurriculares">Actividades extracurriculares:</label>
+                <select multiple id="actividades_extracurriculares">
+                    <option value="futbol">Fútbol</option>
+                    <option value="natación">Natación</option>
+                    <option value="baloncesto">Baloncesto</option>
+                    <option value="volleyball">Volleyball</option>
+                    <option value="rugby">Rugby</option>
+                    <option value="otro">Otro(s)</option>
+                </select>
+            </div>
+
+            <br>
+
+            <div>
+                <label for="color_personalizado">Color personalizado de interfaz del portal académico:</label>
+                <input type="color" id="color_personalizado">
+            </div>
+   
+        </form>
+
     </body>
 
 </html>
