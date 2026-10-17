@@ -9,7 +9,7 @@
         <meta name="author" content="Jaime Luis Osorio Gomez _ Samuel Ramirez Munoz">
         <meta name="description" content="Portal académico web que centraliza el registro y la consulta de dos tipos de usuarios: alumnos y docentes.">
 
-        <title>TITULO DEL PROYECTO: </title>
+        <title>Registro Estudiante-DocenteTutor</title>
     </head>
 
     <body>
@@ -112,8 +112,109 @@
                 <label for="color_personalizado">Color personalizado de interfaz del portal académico:</label>
                 <input type="color" id="color_personalizado">
             </div>
-   
+        
         </form>
+
+<!-- Formulario docente -->
+
+        <form>
+
+        <h1>Formulario de registro Docentes.</h1>
+
+        <div>
+
+            <label for="nombre_docente">Nombre</label>
+            <input id="nombre_docente"required>
+
+        </div>
+
+        <div>
+
+            <label for="edad_docente">Edad</label>
+            <input type="number" id="edad_docente" min="20" max="80">
+
+
+        </div>
+
+        <div>
+
+            <p>Idiomas hablados:</p>
+            <label for="idioma_ingles">Inglés</label>
+            <input type="checkbox" id="idioma_ingles" name="idiomas" value="ingles">
+
+            <label for="idioma_español">Español</label>
+            <input type="checkbox" id="idioma_español" name="idiomas" value="español">
+            
+            <label for="idioma_frances">Francés</label>
+            <input type="checkbox" id="idioma_frances" name="idiomas" value="frances">
+
+            <label for="idioma_portugues">Portugués</label>
+            <input type="checkbox" id="idioma_portugues" name="idiomas" value="portugues">
+
+        </div>
+
+        <div>
+
+            <label for="correo_docente">Correo institucional</label>
+            <input name="correo_docente" type="email" id="correo_docente"required>
+
+
+        </div>
+
+        <div>
+
+            <p>Sexo:</p>
+            <label for="sexo_masculino">Masculino</label>
+            <input type="radio" id="sexo_masculino" name="sexo_docente" value="masculino">
+            <label for="sexo_femenino">Femenino</label>
+            <input type="radio" id="sexo_femenino" name="sexo_docente" value="femenino">
+            <label for="sexo_otro">Otro</label>
+            <input type="radio" id="sexo_otro" name="sexo_docente" value="otro">
+
+        </div>
+
+        <div>
+
+            <label for="Fecha_nacimiento">Fecha nacimiento</label>
+            <input type="date" id="Fecha_nacimiento" required>
+    
+        </div>
+
+        <div>
+
+            <label for="Apellidos_docente">Apellidos</label>
+            <input type="text" id="Apellidos_docente">
+    
+        </div>
+
+        <div>
+
+            <label for="Hoja_vida_docente">Hoja de vida</label>
+            <input type="file" id="Hoja_vida_docente"required>
+    
+        </div>
+
+
+        <div>
+
+            <label for="Contrasena_docente">Contraseña</label>
+            <input name="Contrasena_docente" type="password" id="Contrasena_docente" required>
+    
+        </div>
+
+        <div>
+            
+    <label for="observaciones_docente">Observaciones:</label>
+    <textarea id="observaciones_docente"
+            name="observaciones_docente"
+            rows="4" cols="40"></textarea>
+    </div>
+
+        <input type="submit" value="Registrar docente">
+
+        </form>
+    
+    
 
     </body>
 
